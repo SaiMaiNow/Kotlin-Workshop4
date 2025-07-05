@@ -10,7 +10,6 @@ import io.ktor.server.response.*
 import io.ktor.server.routing.*
 import kotlinx.serialization.Serializable
 
-
 @Serializable
 data class Task(val id: Int, val content: String, val isDone: Boolean)
 
@@ -49,14 +48,12 @@ object TaskRepository {
         tasks.remove(idRemove)
         return idRemove
     }
-
-
 }
 
 fun Application.configureRouting() {
     routing {
         get("/") {
-            call.respondText("Hello Namthip")
+            call.respondText("Hello Rachanon")
         }
         get("/tasks") {
             val tasks = TaskRepository.getAll()
